@@ -85,52 +85,7 @@ selectItems.forEach(item => {
 });
 
 // ------------------ Project Overlay ------------------
-const overlayBox = document.getElementById('overlay');
-const overlayCloseBtn = document.getElementById('closeOverlay');
 
-document.querySelectorAll('.project-img').forEach(item => {
-    item.addEventListener('click', function () {
-        const contentBox = overlayBox.querySelector('.overlay-content');
-        contentBox.innerHTML = "";
-
-        const video = this.querySelector('video');
-        const img = this.querySelector('img');
-
-        if(video){
-            const clone = video.cloneNode(true);
-            clone.muted = false;
-            clone.controls = true;
-            clone.play();
-            contentBox.appendChild(clone);
-        } else if(img){
-            contentBox.appendChild(img.cloneNode(true));
-        }
-
-        overlayBox.classList.add('active');
-    });
-});
-
-// Close overlay
-overlayCloseBtn.addEventListener('click', () => {
-    const video = overlayBox.querySelector('video');
-    if(video) video.pause();
-    overlayBox.classList.remove('active');
-});
-
-// ------------------ Contact Form ------------------
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-formInputs.forEach(input => {
-    input.addEventListener("input", () => {
-        if(form.checkValidity()) {
-            formBtn.removeAttribute("disabled");
-        } else {
-            formBtn.setAttribute("disabled","");
-        }
-    });
-});
 
 // ------------------ Page Navigation ------------------
 const navigationLinks = document.querySelectorAll("[data-nav-link]");

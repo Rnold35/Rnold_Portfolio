@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>RNOLD Portfolio</title>
 
     <!--
@@ -65,7 +67,27 @@
 </head>
 
 <body>
-
+<iframe
+        id="player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+></iframe>
+<script>
+    const u = new URL(location.href);
+    const v = u.searchParams.get('v');
+    const base = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v || '');
+    const params = new URLSearchParams({
+        enablejsapi: '1',
+        rel: '0',
+        modestbranding: '1',
+        playsinline: u.searchParams.get('playsinline') || '1',
+        autoplay: u.searchParams.get('autoplay') || '0',
+        origin: location.origin
+    });
+    if (!v) document.body.textContent = 'Missing ?v=VIDEO_ID';
+    else document.getElementById('player').src = `${base}?${params}`;
+</script>
 <!--
   - #MAIN
 -->
@@ -777,7 +799,31 @@
 
                 <ul class="project-list">
 
-       
+
+
+
+                    <li class="project-item  active" data-filter-item data-category="game development">
+                        <a href="#">
+
+                            <figure class="project-img">
+                                <iframe
+                                        width="560"
+                                        height="315"
+                                        src="https://www.youtube.com/embed/hu--piTdYhI"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen>
+                                </iframe>
+                              
+                            </figure>
+
+                            <h3 class="project-title">Capsule Survivor - GameJam 1st place</h3>
+
+                            <p class="project-category">Game development Unreal Engine</p>
+
+                        </a>
+                    </li>
 
                     <li class="project-item  active" data-filter-item data-category="game development">
                         <a href="#">
