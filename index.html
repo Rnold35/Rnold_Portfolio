@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vCard - Personal Portfolio</title>
+
+    <!--
+      - favicon
+    -->
+    <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+    <!--
+      - custom css link
+    -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!--
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Additional styles for video elements */
+        .project-video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .project-item-icon-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .project-item:hover .project-item-icon-box {
+            opacity: 1;
+        }
+
+        .project-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-video-wrapper {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+<!--
+  - #MAIN
+-->
+
+<main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+        <div class="sidebar-info">
+
+            <figure class="avatar-box">
+                <img src="./assets/images/avatar.jpg" alt="Richard hanrick" width="80">
+            </figure>
+
+            <div class="info-content">
+                <h1 class="name" title="Richard hanrick">Arnold Montuya</h1>
+
+                <p class="title">Game developer</p>
+            </div>
+
+            <button class="info_more-btn" data-sidebar-btn>
+                <span>Show Contacts</span>
+
+                <ion-icon name="chevron-down"></ion-icon>
+            </button>
+
+        </div>
+
+        <div class="sidebar-info_more">
+
+            <div class="separator"></div>
+
+            <ul class="contacts-list">
+
+                <li class="contact-item">
+
+                    <div class="icon-box">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+
+                    <div class="contact-info">
+                        <p class="contact-title">Email</p>
+
+                        <a href="mailto:richard@example.com" class="contact-link">arnold.montuya35@gmail.com</a>
+                    </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                    <div class="icon-box">
+                        <ion-icon name="phone-portrait-outline"></ion-icon>
+                    </div>
+
+                    <div class="contact-info">
+                        <p class="contact-title">Phone</p>
+
+                        <a href="tel:+12133522795" class="contact-link">+63 997 771 1538</a>
+                    </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                    <div class="icon-box">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                    </div>
+
+                    <div class="contact-info">
+                        <p class="contact-title">Birthday</p>
+
+                        <time datetime="1982-06-23">January 22, 1998</time>
+                    </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                    <div class="icon-box">
+                        <ion-icon name="location-outline"></ion-icon>
+                    </div>
+
+                    <div class="contact-info">
+                        <p class="contact-title">Location</p>
+
+                        <address>Canelar, Zamboanga City philippines</address>
+                    </div>
+
+                </li>
+
+            </ul>
+
+            <div class="separator"></div>
+
+            <ul class="social-list">
+
+                <li class="social-item">
+                    <a href="https://www.facebook.com/rnold35/" class="social-link">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
+
+                <li class="social-item">
+                    <a href="https://x.com/Rnold35" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+
+                <li class="social-item">
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+        <!--
+          - #NAVBAR
+        -->
+
+        <nav class="navbar">
+
+            <ul class="navbar-list">
+
+                <li class="navbar-item">
+                    <button class="navbar-link  active" data-nav-link>About</button>
+                </li>
+
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link>Resume</button>
+                </li>
+
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link>Portfolio</button>
+                </li>
+
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link>Blog</button>
+                </li>
+
+                <li class="navbar-item">
+                    <button class="navbar-link" data-nav-link>Contact</button>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+
+
+
+        <!--
+          - #ABOUT
+        -->
+
+        <article class="about  active" data-page="about">
+
+            <header>
+                <h2 class="h2 article-title">About me</h2>
+            </header>
+
+            <section class="about-text">
+                <p>
+                    I'm Electronics Engineer and Unreal Game Developer from Zamboanga City, Philippines, working in web development and print media.
+                    currently working as a Broadcast Technician at AM Broadcast.
+                    I’m passionate about creating immersive and visually striking game experiences using Unreal Engine.
+                </p>
+
+                <p>
+                    I enjoy turning technical challenges into smooth, intuitive, and creative gameplay solutions.
+                    My goal is to build games that are engaging, polished, and memorable—combining strong design, optimized performance,
+                    and artistic direction. Whether it's gameplay mechanics, environments, or visual effects,
+                    I aim to deliver experiences that leave an impact.
+                </p>
+            </section>
+
+
+            <!--
+              - service
+            -->
+
+            <section class="service">
+
+                <h3 class="h3 service-title">What i'm doing</h3>
+
+                <ul class="service-list">
+
+                    <li class="service-item">
+
+                        <div class="service-icon-box">
+                            <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+                        </div>
+
+                        <div class="service-content-box">
+                            <h4 class="h4 service-item-title">Arts And Web Design</h4>
+
+                            <p class="service-item-text">
+                                Digital Arts and quality design made at a professional level.
+                            </p>
+                        </div>
+
+                    </li>
+
+                    <li class="service-item">
+
+                        <div class="service-icon-box">
+                            <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                        </div>
+
+                        <div class="service-content-box">
+                            <h4 class="h4 service-item-title">Game development</h4>
+
+                            <p class="service-item-text">
+                                Making Unreal Engine Games as a Hobby
+                            </p>
+                        </div>
+
+                    </li>
+
+                    <li class="service-item">
+
+                        <div class="service-icon-box">
+                            <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                        </div>
+
+                        <div class="service-content-box">
+                            <h4 class="h4 service-item-title">Mobile apps</h4>
+
+                            <p class="service-item-text">
+                                Have Backgound in Developing Apps in Andriod only
+                            </p>
+                        </div>
+
+                    </li>
+
+                    <li class="service-item">
+
+                        <div class="service-icon-box">
+                            <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+                        </div>
+
+                        <div class="service-content-box">
+                            <h4 class="h4 service-item-title">Photography</h4>
+
+                            <p class="service-item-text">
+                                I like Taking photos.
+                            </p>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!--
+              - testimonials
+            -->
+            <!--
+                <section class="testimonials">
+        
+                  <h3 class="h3 testimonials-title">Testimonials</h3>
+        
+                  <ul class="testimonials-list has-scrollbar">
+        
+                    <li class="testimonials-item">
+                      <div class="content-card" data-testimonials-item>
+        
+                        <figure class="testimonials-avatar-box">
+                          <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                        </figure>
+        
+                        <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
+        
+                        <div class="testimonials-text" data-testimonials-text>
+                          <p>
+                            Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                            lot of experience
+                            and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                            consectetur adipiscing
+                            elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                          </p>
+                        </div>
+        
+                      </div>
+                    </li>
+        
+                    <li class="testimonials-item">
+                      <div class="content-card" data-testimonials-item>
+        
+                        <figure class="testimonials-avatar-box">
+                          <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                        </figure>
+        
+                        <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
+        
+                        <div class="testimonials-text" data-testimonials-text>
+                          <p>
+                            Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                            lot of experience
+                            and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                            consectetur adipiscing
+                            elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                          </p>
+                        </div>
+        
+                      </div>
+                    </li>
+        
+                    <li class="testimonials-item">
+                      <div class="content-card" data-testimonials-item>
+        
+                        <figure class="testimonials-avatar-box">
+                          <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                        </figure>
+        
+                        <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
+        
+                        <div class="testimonials-text" data-testimonials-text>
+                          <p>
+                            Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                            lot of experience
+                            and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                            consectetur adipiscing
+                            elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                          </p>
+                        </div>
+        
+                      </div>
+                    </li>
+        
+                    <li class="testimonials-item">
+                      <div class="content-card" data-testimonials-item>
+        
+                        <figure class="testimonials-avatar-box">
+                          <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
+                        </figure>
+        
+                        <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
+        
+                        <div class="testimonials-text" data-testimonials-text>
+                          <p>
+                            Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                            lot of experience
+                            and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                            consectetur adipiscing
+                            elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                          </p>
+                        </div>
+        
+                      </div>
+                    </li>
+        
+                  </ul>
+        
+                </section>
+        
+        
+                <!--
+                  - testimonials modal
+                -->
+
+            <div class="modal-container" data-modal-container>
+
+                <div class="overlay" data-overlay></div>
+
+                <section class="testimonials-modal">
+
+                    <button class="modal-close-btn" data-modal-close-btn>
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
+
+                    <div class="modal-img-wrapper">
+                        <figure class="modal-avatar-box">
+                            <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+                        </figure>
+
+                        <img src="./assets/images/icon-quote.svg" alt="quote icon">
+                    </div>
+
+                    <div class="modal-content">
+
+                        <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+                        <time datetime="2021-06-14">14 June, 2021</time>
+
+                        <div data-modal-text>
+                            <p>
+                                Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                                lot of experience
+                                and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                                consectetur adipiscing
+                                elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!--
+              - clients
+            -->
+
+            <section class="clients">
+
+                <h3 class="h3 clients-title">Club and Organization</h3>
+
+                <ul class="clients-list has-scrollbar">
+
+                    <li class="clients-item">
+                        <a href="#">
+                            <img src="./assets/images/zigdc.png" alt="client logo" style="width: 200px; height: auto;">
+                        </a>
+                    </li>
+
+         
+
+
+
+                </ul>
+
+            </section>
+
+        </article>
+
+
+
+
+
+        <!--
+          - #RESUME
+        -->
+
+        <article class="resume" data-page="resume">
+
+            <header>
+                <h2 class="h2 article-title">Resume</h2>
+            </header>
+
+            <section class="timeline">
+
+                <div class="title-wrapper">
+                    <div class="icon-box">
+                        <ion-icon name="book-outline"></ion-icon>
+                    </div>
+
+                    <h3 class="h3">Education</h3>
+                </div>
+
+                <ol class="timeline-list">
+
+                    <li class="timeline-item">
+
+                        <h4 class="h4 timeline-item-title">Universidad De Zamboanga</h4>
+
+                        <span>2014 — 2019</span>
+
+                        <p class="timeline-text">
+                            Graduated Bachelor of Science electronics and communication engineer
+                        </p>
+
+                    </li>
+
+                    <li class="timeline-item">
+
+                        <h4 class="h4 timeline-item-title">Zion Evangelical School</h4>
+
+                        <span>2010 — 2014</span>
+
+                        <p class="timeline-text">
+                            High School
+                        </p>
+
+                    </li>
+
+                    <li class="timeline-item">
+
+                        <h4 class="h4 timeline-item-title">Zion Evangelical School</h4>
+
+                        <span>2006 — 2010</span>
+
+                        <p class="timeline-text">
+                            Elementary School
+                        </p>
+
+                    </li>
+
+                </ol>
+
+            </section>
+
+            <section class="timeline">
+
+                <div class="title-wrapper">
+                    <div class="icon-box">
+                        <ion-icon name="book-outline"></ion-icon>
+                    </div>
+
+                    <h3 class="h3">Experience</h3>
+                </div>
+
+                <ol class="timeline-list">
+
+                    <li class="timeline-item">
+
+                        <h4 class="h4 timeline-item-title">Broadcast Operation Technician</h4>
+
+                        <span>2023 — Present</span>
+
+                        <p class="timeline-text">
+                            Radyo Pilipinas Zamboanga - Radyo Publiko, is a radio station owned and operated by the Presidential Broadcast Service, an attached agency under the Presidential Communications Office.
+                        </p>
+
+                    </li>
+
+                    <li class="timeline-item">
+
+                        <h4 class="h4 timeline-item-title">Network Administrator</h4>
+
+                        <span>2022 — 2023</span>
+
+                        <p class="timeline-text">
+                            KCC Mall Zamboanga
+                        </p>
+
+                    </li>
+
+                    <li class="timeline-item">
+
+                        <h4 class="h4 timeline-item-title">Part Time Instructor</h4>
+
+                        <span>2020 — 2020</span>
+
+                        <p class="timeline-text">
+                            Instructor for a half Semester at Universidad De Zamboanga
+                        </p>
+
+                    </li>
+
+                </ol>
+
+            </section>
+
+            <section class="skill">
+
+                <h3 class="h3 skills-title">My skills</h3>
+
+                <ul class="skills-list content-card">
+
+                    <li class="skills-item">
+
+                        <div class="title-wrapper">
+                            <h5 class="h5">Unreal Engine</h5>
+                            <data value="80">80%</data>
+                        </div>
+
+                        <div class="skill-progress-bg">
+                            <div class="skill-progress-fill" style="width: 80%;"></div>
+                        </div>
+
+                    </li>
+
+                    <li class="skills-item">
+
+                        <div class="title-wrapper">
+                            <h5 class="h5">Art Design</h5>
+                            <data value="70">50%</data>
+                        </div>
+
+                        <div class="skill-progress-bg">
+                            <div class="skill-progress-fill" style="width: 50%;"></div>
+                        </div>
+
+                    </li>
+
+                    <li class="skills-item">
+
+                        <div class="title-wrapper">
+                            <h5 class="h5">Web Design</h5>
+                            <data value="90">40%</data>
+                        </div>
+
+                        <div class="skill-progress-bg">
+                            <div class="skill-progress-fill" style="width: 40%;"></div>
+                        </div>
+
+                    </li>
+
+                    <li class="skills-item">
+
+                        <div class="title-wrapper">
+                            <h5 class="h5">3d Modeling</h5>
+                            <data value="50">30%</data>
+                        </div>
+
+                        <div class="skill-progress-bg">
+                            <div class="skill-progress-fill" style="width: 30%;"></div>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </article>
+
+
+
+
+
+        <!--
+          - #PORTFOLIO
+        -->
+
+        <article class="portfolio" data-page="portfolio">
+
+            <header>
+                <h2 class="h2 article-title">Portfolio</h2>
+            </header>
+            <!-- Overlay Popup -->
+            <div id="overlay" class="overlay">
+                <span id="closeOverlay" class="overlay-close">&times;</span>
+                <div class="overlay-content">
+                    <!-- Content inserted by JS -->
+                </div>
+            </div>
+
+            <section class="projects">
+
+                <ul class="filter-list">
+
+                    <li class="filter-item">
+                        <button class="active" data-filter-btn>All</button>
+                    </li>
+
+                    <li class="filter-item">
+                        <button data-filter-btn>Game Development</button>
+                    </li>
+
+                    <li class="filter-item">
+                        <button data-filter-btn>Applications</button>
+                    </li>
+
+                    <li class="filter-item">
+                        <button data-filter-btn>Photography and Arts</button>
+                    </li>
+
+                </ul>
+
+                <div class="filter-select-box">
+
+                    <button class="filter-select" data-select>
+
+                        <div class="select-value" data-select-value>Select category</div>
+
+                        <div class="select-icon">
+                            <ion-icon name="chevron-down"></ion-icon>
+                        </div>
+
+                    </button>
+
+                    <ul class="select-list">
+
+                        <li class="select-item">
+                            <button data-select-item>All</button>
+                        </li>
+
+                        <li class="select-item">
+                            <button data-select-item>Game Development</button>
+                        </li>
+
+                        <li class="select-item">
+                            <button data-select-item>Applications</button>
+                        </li>
+
+                        <li class="select-item">
+                            <button data-select-item>Photography and Arts</button>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <ul class="project-list">
+
+                    <li class="project-item  active" data-filter-item data-category="game development">
+                        <a href="#">
+
+                            <figure class="project-img">
+                                <div class="project-video-wrapper">
+                                    <video class="project-video" muted loop>
+                                        <source src="./assets/videos/test1.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+
+                            </figure>
+
+                            <h3 class="project-title">Street Food Isometric View</h3>
+
+                            <p class="project-category">Game development Unreal Engine</p>
+
+                        </a>
+                    </li>
+                    <li class="project-item  active" data-filter-item data-category="game development">
+                        <a href="#">
+
+                            <figure class="project-img">
+                                <div class="project-video-wrapper">
+                                    <video class="project-video" muted loop>
+                                        <source src="./assets/videos/jam2.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+
+                            </figure>
+
+                            <h3 class="project-title">Capsule Survivor - GameJam 1st place</h3>
+
+                            <p class="project-category">Game development Unreal Engine</p>
+
+                        </a>
+                    </li>
+
+                    <li class="project-item  active" data-filter-item data-category="game development">
+                        <a href="#">
+
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+
+                                <img src="./assets/images/jam1.png" alt="orizon" loading="lazy">
+                            </figure>
+
+                            <h3 class="project-title">Capsule Survivor - GameJam 1st place</h3>
+
+                            <p class="project-category">Game development Unreal Engine</p>
+
+                        </a>
+                    </li>
+                    <li class="project-item  active" data-filter-item data-category="game development">
+                        <a href="#">
+
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+
+                                <img src="./assets/images/street1.png" alt="orizon" loading="lazy">
+                            </figure>
+
+                            <h3 class="project-title">Street Food Simulator</h3>
+
+                            <p class="project-category">Game development Unreal Engine</p>
+
+                        </a>
+                    </li>
+
+                    <li class="project-item  active" data-filter-item data-category="game development">
+                        <a href="#">
+
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+
+                                <img src="./assets/images/street2.png" alt="orizon" loading="lazy">
+                            </figure>
+
+                            <h3 class="project-title">Street Food Simulator</h3>
+
+                            <p class="project-category">Game development Unreal Engine</p>
+
+                        </a>
+                    </li>
+
+                    <li class="project-item  active" data-filter-item data-category="applications">
+                        <a href="#">
+
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+
+                                <img src="./assets/images/simtra.png" alt="orizon" loading="lazy">
+                            </figure>
+
+                            <h3 class="project-title">Simtra Pro</h3>
+
+                            <p class="project-category">Andriod App</p>
+
+                        </a>
+                    </li>
+
+                    <li class="project-item  active" data-filter-item data-category="game development">
+                        <a href="#">
+
+                            <figure class="project-img">
+                                <div class="project-item-icon-box">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </div>
+
+                                <img src="./assets/images/street3.png" alt="orizon" loading="lazy">
+                            </figure>
+
+                            <h3 class="project-title">Street Food Isometric View</h3>
+
+                            <p class="project-category">Game development Unreal Engine</p>
+
+                        </a>
+                    </li>
+                    
+                </ul>
+
+            </section>
+
+
+        </article>
+
+
+
+
+
+        <!--
+          - #BLOG
+        -->
+
+        <article class="blog" data-page="blog">
+
+            <header>
+                <h2 class="h2 article-title">Blog</h2>
+            </header>
+
+            <section class="blog-posts">
+
+                <ul class="blog-posts-list">
+
+                    <li class="blog-post-item">
+                        <a href="https://communities.unrealengine.com/events/details/epic-games-quezon-city-metro-manila-presents-unreal-optimization-for-low-to-mid-tier-pcs/">
+
+                            <figure class="blog-banner-box">
+                                <img src="./assets/images/blog-1.jpg" alt="Design conferences in     2022" loading="lazy">
+                            </figure>
+
+                            <div class="blog-content">
+
+                                <div class="blog-meta">
+                                    <p class="blog-category">Unreal Talk</p>
+
+                                    <span class="dot"></span>
+
+                                    <time datetime="2022-02-23">Nov 29, 2025</time>
+                                </div>
+
+                                <h3 class="h3 blog-item-title">𝐔𝐧𝐫𝐞𝐚𝐥 𝐎𝐩𝐭𝐢𝐦𝐢𝐳𝐚𝐭𝐢𝐨𝐧 𝐟𝐨𝐫 𝐋𝐨𝐰 𝐭𝐨 𝐌𝐢𝐝-𝐓𝐢𝐞𝐫 𝐏𝐂𝐬</h3>
+
+                                <p class="blog-text">
+                                    Discover insider tips to optimize your Unreal Engine games for smooth performance on low to mid-tier PCs. Perfect for aspiring developers looking to level up their skills!
+                                </p>
+
+                            </div>
+
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </article>
+
+
+
+
+
+        <!--
+          - #CONTACT
+        -->
+
+        <article class="contact" data-page="contact">
+
+            <header>
+                <h2 class="h2 article-title">Contact</h2>
+            </header>
+
+            <section class="social-contact">
+                <div class="social-item">
+                    <div class="icon facebook">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </div>
+                    <div class="details">
+                        <span class="label">Facebook</span>
+                        <a href="https://www.facebook.com/rnold35" target="_blank" class="value">Message Me</a>
+                    </div>
+                </div>
+
+                <div class="social-item">
+                    <div class="icon threads">
+                        <ion-icon name="logo-twitter"></ion-icon> <!-- placeholder for Threads -->
+                    </div>
+                    <div class="details">
+                        <span class="label">Threads</span>
+                        <a href="https://www.threads.com/@rnold_35" target="_blank" class="value">Follow Me</a>
+                    </div>
+                </div>
+
+                <div class="social-item">
+                    <div class="icon twitter">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </div>
+                    <div class="details">
+                        <span class="label">Twitter</span>
+                        <a href="https://x.com/Rnold35" target="_blank" class="value">Rnold35</a>
+                    </div>
+                </div>
+
+                <div class="social-item">
+                    <div class="icon linkedin">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </div>
+                    <div class="details">
+                        <span class="label">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/arnold-montuya-940081203/" target="_blank" class="value">Connect</a>
+                    </div>
+                </div>
+
+                <div class="social-item">
+                    <div class="icon instagram">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </div>
+                    <div class="details">
+                        <span class="label">Instagram</span>
+                        <a href="https://www.instagram.com/rnold_35/" target="_blank" class="value">Rnold_35</a>
+                    </div>
+                </div>
+
+                <div class="social-item">
+                    <div class="icon tiktok">
+                        <ion-icon name="logo-tiktok"></ion-icon>
+                    </div>
+                    <div class="details">
+                        <span class="label">Tiktok</span>
+                        <a href="https://www.tiktok.com/@gamedevcake" target="_blank" class="value">gamedevcake</a>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+    </div>
+
+</main>
+
+<!--
+  - custom js link
+-->
+<script src="./assets/js/script.js"></script>
+
+<!--
+  - ionicon link
+-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    // JavaScript to handle video playback on hover
+    document.addEventListener('DOMContentLoaded', function() {
+        const projectItems = document.querySelectorAll('.project-item');
+
+        projectItems.forEach(item => {
+            const video = item.querySelector('.project-video');
+            const playIcon = item.querySelector('.project-item-icon-box');
+
+            item.addEventListener('mouseenter', function() {
+                if (video) {
+                    video.play().catch(e => {
+                        console.log('Autoplay prevented:', e);
+                    });
+                }
+            });
+
+            item.addEventListener('mouseleave', function() {
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+            });
+
+
+        });
+    });
+
+    // Enhanced video handling
+    document.addEventListener('DOMContentLoaded', function() {
+        const projectItems = document.querySelectorAll('.project-item');
+
+        projectItems.forEach(item => {
+            const video = item.querySelector('.project-video');
+            const playIcon = item.querySelector('.project-item-icon-box');
+
+            if (video) {
+                // Try to preload video
+                video.preload = "metadata";
+
+                item.addEventListener('mouseenter', function() {
+                    video.play().catch(e => {
+                        // If autoplay fails, show controls
+                        video.controls = true;
+                        console.log('Autoplay prevented, showing controls');
+                    });
+                });
+
+                item.addEventListener('mouseleave', function() {
+                    if (!video.paused) {
+                        video.pause();
+                        video.currentTime = 0;
+                    }
+                    video.controls = false;
+                });
+
+                // Click to toggle play/pause
+                if (playIcon) {
+                    playIcon.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (video.paused) {
+                            video.play();
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }
+            }
+        });
+    }); 
+</script>
+
+
+</body>
+
+</html>
